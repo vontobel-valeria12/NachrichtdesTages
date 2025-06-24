@@ -1,0 +1,61 @@
+/* Reset básico */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+/* Centralizar tudo e dar espaçamento */
+.container {
+  max-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Título */
+h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Vídeo 100% responsivo */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px; /* bom para celular */
+  margin: 0 auto 20px auto;
+  padding-bottom: 56.25%; /* proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #eaeaea;
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+}

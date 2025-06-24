@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Botschaft des Tages – Glaube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🙏 Botschaft des Tages – Glaube</h1>
+
+    <div class="video-wrapper">
+      <iframe 
+        id="videoDia"
+        src=""
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+const videosFe = [
+  "https://www.youtube.com/embed/pVk1zr8RaMQ",
+  "https://www.youtube.com/embed/D-dsdKdlt-4",
+  "https://www.youtube.com/embed/1WiVbohCuxA"
+];
+
+const hoje = new Date();
+const index = hoje.getDate() % videosFe.length;
+
+// AQUI: rel=0 foi adicionado para evitar vídeos recomendados de outros canais
+const link = videosFe[index] + "?autoplay=1&mute=0&rel=0";
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("videoDia").src = link;
+});
+
+  </script>
+</body>
+</html>
