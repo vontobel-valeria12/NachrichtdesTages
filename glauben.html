@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Botschaft des Tages – Glaube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Mantém seu CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <h1>🙏 Botschaft des Tages – Glaube</h1>
+
+    <!-- NOVO: grade responsiva envolvendo vídeo + versículo -->
+    <div class="content-grid">
+      <!-- Coluna do vídeo (sua estrutura original) -->
+      <section class="video-col">
+        <div class="video-wrapper">
+          <iframe 
+            id="videoDia"
+            src=""
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <!-- Coluna do versículo (seu bloco, sem mudar IDs) -->
+      <aside class="votd">
+        <div class="votd-header">
+          <div>
+            <div class="votd-date" id="votd-date"></div>
+          </div>
+          <button class="btn" id="refreshBtn" title="Heutigen Vers neu laden">↻</button>
+        </div>
+
+        <blockquote id="votd-text">Lädt...</blockquote>
+        <div class="ref" id="votd-ref"></div>
+
+        <div class="actions">
+          <button class="btn" id="copyBtn">Text kopieren</button>
+          <button class="btn btn-primary" id="shareBtn">Teilen</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    /* =======================
+       1) VÍDEO DO DIA (SEU)
+       ======================= */
+    const videosFe = [
+      "https://www.youtube.com/embed/bosXe7dXdbs",
+      "https://www.youtube.com/embed/ZXD__w4jsTs",
+      "https://www.youtube.com/embed/hA-vWVMH2Y0",
+      "https://www.youtube.com/embed/RvW2ZyOttvc"
+    ];
+    const hoje = new Date();
+    const index = hoje.getDate() % videosFe.length;
+    // rel=0 para reduzir recomendações externas
+    const link = videosFe[index] + "?autoplay=1&mute=0&rel=0";
+    document.getElementById("videoDia").src = link;
+
+    /* =======================
+       2) VERS DES TAGES
+       ======================= */
+    const VERSES = {
+      "01-01": { text: "Am Anfang schuf Gott Himmel und Erde.", ref: "1. Mose 1,1" },
+      "01-02": { text: "Der Herr ist mein Hirte; mir wird nichts mangeln.", ref: "Psalm 23,1" },
+      "01-03": { text: "Denn also hat Gott die Welt geliebt, dass er seinen eingeborenen Sohn gab.", ref: "Johannes 3,16" },
+      "01-04": { text: "Alles, was ihr tut, geschehe in Liebe.", ref: "1. Korinther 16,14" },
+      "01-05": { text: "Ich vermag alles durch den, der mich mächtig macht: Christus.", ref: "Philipper 4,13" },
+      "01-06": { text: "Bittet, so wird euch gegeben; suchet, so werdet ihr finden.", ref: "Matthäus 7,7" },
+      "01-07": { text: "Der Herr ist nahe allen, die ihn anrufen.", ref: "Psalm 145,18" },
+      "01-08": { text: "Seid stark und mutig, fürchtet euch nicht.", ref: "Josua 1,9" },
+      "01-09": { text: "Lobe den Herrn, meine Seele, und vergiss nicht, was er dir Gutes getan hat.", ref: "Psalm 103,2" },
+      "01-10": { text: "Der Herr ist mein Licht und mein Heil; vor wem sollte ich mich fürchten?", ref: "Psalm 27,1" },
+      "01-11": { text: "Wer zu mir kommt, den werde ich nicht hinausstoßen.", ref: "Johannes 6,37" },
+      "01-12": { text: "Selig sind die Barmherzigen; denn sie werden Barmherzigkeit erlangen.", ref: "Matthäus 5,7" },
+      "01-13": { text: "Alle Dinge sind möglich dem, der da glaubt.", ref: "Markus 9,23" },
+      "01-14": { text: "Der Friede Gottes, der höher ist als alle Vernunft, wird eure Herzen bewahren.", ref: "Philipper 4,7" },
+      "01-15": { text: "Ich bin der Weg und die Wahrheit und das Leben.", ref: "Johannes 14,6" },
+      "01-16": { text: "Die Furcht des Herrn ist der Anfang der Weisheit.", ref: "Sprüche 9,10" },
+      "01-17": { text: "Der Herr ist gerecht in allen seinen Wegen.", ref: "Psalm 145,17" },
+      "01-18": { text: "Wir lieben, weil er uns zuerst geliebt hat.", ref: "1. Johannes 4,19" },
+      "01-19": { text: "Der Herr ist mein Fels, meine Burg und mein Erretter.", ref: "Psalm 18,3" },
+      "01-20": { text: "Sorgt euch um nichts, sondern in allen Dingen lasst eure Bitten vor Gott kundwerden.", ref: "Philipper 4,6" },
+      "01-21": { text: "Alles, was Odem hat, lobe den Herrn.", ref: "Psalm 150,6" },
+      "01-22": { text: "So sei nun des HERRN Furcht bei euch.", ref: "2. Chronik 19,7" },
+      "01-23": { text: "Gott ist unsre Zuflucht und Stärke.", ref: "Psalm 46,2" },
+      "01-24": { text: "Selig sind, die reinen Herzens sind; denn sie werden Gott schauen.", ref: "Matthäus 5,8" },
+      "01-25": { text: "Der Herr ist treu; er wird euch stärken.", ref: "2. Thessalonicher 3,3" },
+      "01-26": { text: "Alle eure Sorge werft auf ihn; denn er sorgt für euch.", ref: "1. Petrus 5,7" },
+      "01-27": { text: "Seid fröhlich in Hoffnung, geduldig in Trübsal.", ref: "Römer 12,12" },
+      "01-28": { text: "Gott ist Liebe; und wer in der Liebe bleibt, der bleibt in Gott.", ref: "1. Johannes 4,16" },
+      "01-29": { text: "Der Herr ist meine Stärke und mein Lied.", ref: "2. Mose 15,2" },
+      "01-30": { text: "Lasst uns aufsehen auf Jesus, den Anfänger und Vollender des Glaubens.", ref: "Hebräer 12,2" }
+    };
+
+    function formatDateCH(date) {
+      // de-CH costuma vir com dia da semana minúsculo; capitaliza a 1ª letra
+      const s = new Intl.DateTimeFormat('de-CH', { weekday: 'long', day: '2-digit', month: 'short' }).format(date);
+      return s.replace(/^[a-zäöü]/, m => m.toUpperCase());
+    }
+    function todayKey(date = new Date()) {
+      const mm = String(date.getMonth() + 1).padStart(2, '0');
+      const dd = String(date.getDate()).padStart(2, '0');
+      return `${mm}-${dd}`;
+    }
+    function fallbackKey(allKeys, seed) {
+      let h = 0; for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+      return allKeys[h % allKeys.length];
+    }
+
+    const LS_DATE = 'votd_date';
+    const LS_KEY  = 'votd_key';
+
+    function pickTodayVerse() {
+      const now = new Date();
+      const tzNow = new Date(now.toLocaleString('en-CA', { timeZone: 'Europe/Zurich' }));
+      const todayStr = todayKey(tzNow);
+      const storedDate = localStorage.getItem(LS_DATE);
+      const storedKey  = localStorage.getItem(LS_KEY);
+      if (storedDate === todayStr && storedKey && VERSES[storedKey]) return storedKey;
+      const keys = Object.keys(VERSES);
+      const chosen = VERSES[todayStr] ? todayStr : fallbackKey(keys, todayStr);
+      localStorage.setItem(LS_DATE, todayStr);
+      localStorage.setItem(LS_KEY, chosen);
+      return chosen;
+    }
+
+    function renderVerse(k) {
+      document.getElementById('votd-date').textContent = formatDateCH(new Date());
+      const v = VERSES[k];
+      if (!v) {
+        document.getElementById('votd-text').textContent = 'Kein Vers gefunden.';
+        document.getElementById('votd-ref').textContent = '';
+      } else {
+        document.getElementById('votd-text').textContent = v.text;
+        document.getElementById('votd-ref').textContent  = v.ref;
+      }
+    }
+
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      const t = document.getElementById('votd-text').textContent;
+      const r = document.getElementById('votd-ref').textContent;
+      try { await navigator.clipboard.writeText(`${t} — ${r}`); } catch {}
+    });
+    document.getElementById('shareBtn').addEventListener('click', async () => {
+      const t = document.getElementById('votd-text').textContent;
+      const r = document.getElementById('votd-ref').textContent;
+      if (navigator.share) { try { await navigator.share({ title: 'Vers des Tages', text: `${t} — ${r}` }); } catch {} }
+    });
+    document.getElementById('refreshBtn').addEventListener('click', () => {
+      renderVerse(localStorage.getItem(LS_KEY) || pickTodayVerse());
+    });
+
+    // Start
+    renderVerse(pickTodayVerse());
+  });
+  </script>
+</body>
+</html>
