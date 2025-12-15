@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Loja Artesanal Personalizada</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1 class="logo">Sua Loja Artesanal</h1>
+            <nav class="menu-desktop">
+                <a href="#">Home</a>
+                <a href="#">Produtos</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </nav>
+            <div class="header-right">
+                <input type="text" placeholder="Buscar produtos..." class="busca">
+                <div class="carrinho-icon">🛒 <span id="contador-itens">0</span></div>
+            </div>
+            <div class="menu-mobile">☰</div>
+        </div>
+    </header>
+
+    <!-- Hero/Banner -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Produtos Artesanais Feitos com Amor</h2>
+            <p>Personalize canecas, pôsteres, blusas e mais com sua foto ou texto especial.</p>
+            <a href="#produtos" class="btn-hero">Ver Produtos</a>
+        </div>
+    </section>
+
+    <!-- Grid de Produtos -->
+    <section class="produtos" id="produtos">
+        <div class="container">
+            <h2 class="section-title">Produtos em Destaque</h2>
+            <div class="grid-produtos">
+                <!-- Produto 1: Caneca Personalizada -->
+                <div class="card-produto" data-id="1" data-nome="Caneca Personalizada" data-preco="49.90">
+                    <img src="imagens/caneca-mockup.jpg" alt="Caneca Personalizada">
+                    <h3>Caneca com Foto ou Nome</h3>
+                    <p class="preco">R$ 49,90</p>
+                    <button class="btn-personalizar">Personalizar</button>
+                    <button class="btn-adicionar escondido">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Produto 2: Pôster Aquarela -->
+                <div class="card-produto" data-id="2" data-nome="Pôster Aquarela Personalizado" data-preco="79.90">
+                    <img src="imagens/poster-mockup.jpg" alt="Pôster Aquarela">
+                    <h3>Pôster em Estilo Aquarela</h3>
+                    <p class="preco">R$ 79,90</p>
+                    <button class="btn-personalizar">Personalizar</button>
+                    <button class="btn-adicionar escondido">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Adicione mais cards aqui -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Personalização -->
+    <div id="modal-personalizar" class="modal escondido">
+        <div class="modal-content">
+            <span class="fechar">×</span>
+            <h2>Personalize seu Produto</h2>
+            <p id="nome-produto-modal"></p>
+            <label>Texto personalizado:</label>
+            <input type="text" id="texto-custom" placeholder="Ex: Nome, frase especial">
+            
+            <label>Upload de foto (opcional):</label>
+            <input type="file" id="upload-foto" accept="image/*">
+            <img id="previa-foto" class="escondido" alt="Prévia da foto">
+            
+            <button id="btn-aplicar-personalizacao">Aplicar e Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+    <!-- Dropdown Carrinho (simples) -->
+    <div id="carrinho-dropdown" class="carrinho-dropdown escondido">
+        <h3>Carrinho</h3>
+        <ul id="lista-carrinho"></ul>
+        <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+        <button id="btn-limpar">Limpar</button>
+        <button id="btn-pagamento">Finalizar Pedido</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
