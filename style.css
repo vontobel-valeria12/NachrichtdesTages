@@ -1,0 +1,38 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background: #f8f8f8; color: #333; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+.header-content { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+.logo { font-family: 'Playfair Display', serif; font-size: 28px; }
+nav a { margin: 0 15px; text-decoration: none; color: #333; }
+.busca { padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+.carrinho-icon { font-size: 24px; cursor: pointer; position: relative; }
+
+.hero { background: url('imagens/banner-artesanal.jpg') center/cover no-repeat; height: 500px; display: flex; align-items: center; color: white; text-align: center; }
+.hero-text { max-width: 600px; margin: 0 auto; background: rgba(0,0,0,0.4); padding: 40px; border-radius: 10px; }
+.btn-hero { background: #e91e63; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; }
+
+.section-title { text-align: center; margin: 50px 0 30px; font-family: 'Playfair Display', serif; font-size: 32px; }
+.grid-produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.card-produto { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; padding: 20px; }
+.card-produto img { width: 100%; height: 300px; object-fit: cover; }
+.preco { font-size: 24px; margin: 15px 0; color: #e91e63; }
+.btn-personalizar { background: #333; color: white; padding: 12px; border: none; width: 100%; cursor: pointer; }
+.btn-adicionar { background: #28a745; color: white; padding: 12px; border: none; width: 100%; cursor: pointer; }
+
+/* Modal */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; }
+.modal-content { background: white; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px; }
+.fechar { float: right; font-size: 30px; cursor: pointer; }
+#previa-foto { max-width: 100%; margin-top: 10px; }
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .menu-desktop, .busca { display: none; }
+    .hero { height: 400px; }
+}
+
+/* Outros (carrinho dropdown, escondido, etc.) */
+.escondido { display: none; }
+.carrinho-dropdown { position: absolute; right: 20px; top: 80px; background: white; border: 1px solid #ddd; padding: 20px; width: 350px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
