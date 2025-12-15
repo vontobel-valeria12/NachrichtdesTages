@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valéria Artesanal - Produtos Feitos com Amor</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: #fffaf0;
+            color: #5d4037;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: url('https://us.123rf.com/450wm/mash3r/mash3r1712/mash3r171200016/91097139-white-rain-of-heart-love-with-paper-cut-flying-hearts-romantic-invitation-card-origami-cloud.jpg') center/cover no-repeat;
+            padding: 120px 20px;
+            color: #5d4037;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+        }
+        h1 { font-size: 3.5em; margin: 0; color: #d47a9e; }
+        h2 { color: #d47a9e; margin: 40px 0 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .produto {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .produto:hover { transform: translateY(-10px); }
+        .produto img { max-width: 100%; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .preco { font-size: 1.6em; color: #d47a9e; font-weight: bold; margin: 15px 0; }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+        button {
+            background: #d47a9e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+        button:hover { background: #c06286; }
+        .whatsapp-btn {
+            background: #25D366;
+            padding: 15px 30px;
+            font-size: 1.3em;
+            border-radius: 30px;
+        }
+        footer {
+            background: #d47a9e;
+            color: white;
+            padding: 30px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Valéria Artesanal</h1>
+        <p>Produtos personalizados feitos à mão com muito amor ❤️</p>
+    </header>
+
+    <div class="container">
+        <h2>Nossos Produtos</h2>
+        <p>Escolha o produto, personalize com foto, texto e fonte, e envie seu pedido direto pelo WhatsApp!</p>
+
+        <div class="produtos">
+            <!-- Caneca -->
+            <div class="produto">
+                <img src="https://img.elo7.com.br/product/zoom/367C924/caneca-personalizada-letra-e-nome-com-frase-viver-um-dia-caneca-promocao.jpg" alt="Caneca personalizada">
+                <h3>Caneca Personalizada</h3>
+                <p class="preco">€ 35,00 (ou equivalente)</p>
+                
+                <input type="file" id="foto-caneca" accept="image/*">
+                <input type="text" id="texto-caneca" placeholder="Nome, frase ou texto desejado">
+                <select id="fonte-caneca">
+                    <option value="arial">Arial (simples e moderna)</option>
+                    <option value="georgia">Georgia (elegante)</option>
+                    <option value="script">Cursiva (romântica)</option>
+                    <option value="bold">Negrito (forte)</option>
+                </select>
+                
+                <button onclick="personalizarEEnviar('Caneca Personalizada', 35, 'caneca')">Personalizar e Enviar Pedido</button>
+            </div>
+
+            <!-- Vela Aromática -->
+            <div class="produto">
+                <img src="https://plimpapier.com/10933-large_default/vela-aromatica-em-frasco-de-vidro-etiqueta-papel-lembranca.jpg" alt="Vela aromática personalizada">
+                <h3>Vela Aromática</h3>
+                <p class="preco">€ 40,00</p>
+                
+                <input type="file" id="foto-vela" accept="image/*">
+                <input type="text" id="texto-vela" placeholder="Nome ou mensagem para etiqueta">
+                <select id="fonte-vela">
+                    <option value="arial">Arial</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="script">Cursiva</option>
+                    <option value="bold">Negrito</option>
+                </select>
+                
+                <button onclick="personalizarEEnviar('Vela Aromática', 40, 'vela')">Personalizar e Enviar Pedido</button>
+            </div>
+
+            <!-- Pote de Mel -->
+            <div class="produto">
+                <img src="https://img.elo7.com.br/product/zoom/2AF974B/lembrancinha-de-nascimento-com-mel-lembrancinha-pote-de-mel.jpg" alt="Pote de mel personalizado">
+                <h3>Pote de Mel Natural</h3>
+                <p class="preco">€ 25,00</p>
+                
+                <input type="file" id="foto-mel" accept="image/*">
+                <input type="text" id="texto-mel" placeholder="Nome ou dedicatória">
+                <select id="fonte-mel">
+                    <option value="arial">Arial</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="script">Cursiva</option>
+                    <option value="bold">Negrito</option>
+                </select>
+                
+                <button onclick="personalizarEEnviar('Pote de Mel Natural', 25, 'mel')">Personalizar e Enviar Pedido</button>
+            </div>
+
+            <!-- Brincos Artesanais -->
+            <div class="produto">
+                <img src="https://i.etsystatic.com/25146997/r/il/1de4ba/5964238428/il_570xN.5964238428_9qos.jpg" alt="Brincos artesanais">
+                <h3>Brincos Artesanais</h3>
+                <p>Modelo padrão ou com inicial (sem foto)</p>
+                <p class="preco">€ 30,00</p>
+                
+                <input type="text" id="texto-brincos" placeholder="Inicial ou nome (opcional)">
+                <button onclick="enviarSimples('Brincos Artesanais', 30)">Enviar Pedido (sem foto)</button>
+            </div>
+        </div>
+
+        <h2>Como funciona?</h2>
+        <p>1. Escolha o produto<br>
+           2. Envie sua foto (se precisar) + texto + fonte<br>
+           3. Clique no botão → tudo chega pronto no meu WhatsApp!<br>
+           4. Combinamos pagamento e envio ❤️</p>
+    </div>
+
+    <footer>
+        <p>Valéria Artesanal © 2025 | Feito com carinho à mão</p>
+        <p>Contato: <a href="https://wa.me/SEUNUMERO" style="color:white; text-decoration: underline;">WhatsApp</a> 
+        → Substitua SEUNUMERO pelo seu número completo (ex: 4915123456789 para Alemanha)</p>
+    </footer>
+
+    <script>
+        // Função para produtos sem personalização de foto (ex: brincos)
+        function enviarSimples(produto, preco) {
+            let mensagem = `Oi Valéria! Quero \( {produto} (€ \){preco})\n\nDetalhes: `;
+            const whatsappLink = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(mensagem)}`;
+            window.open(whatsappLink, '_blank');
+        }
+
+        // Função principal com upload de foto
+        function personalizarEEnviar(produto, preco, id) {
+            const fileInput = document.getElementById('foto-' + id);
+            const textoInput = document.getElementById('texto-' + id);
+            const fonteSelect = document.getElementById('fonte-' + id);
+
+            const texto = textoInput.value.trim() || 'Sem texto adicional';
+            const fonte = fonteSelect.options[fonteSelect.selectedIndex].text;
+
+            // Se não tem campo de foto ou não enviou foto, envia só texto
+            if (!fileInput || fileInput.files.length === 0) {
+                let mensagem = `Oi Valéria! Quero personalizar: \( {produto} (€ \){preco})\n\n`;
+                mensagem += `Texto: ${texto}\n`;
+                mensagem += `Fonte: ${fonte}\n\nPronto pra combinar! ❤️`;
+                const whatsappLink = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(mensagem)}`;
+                window.open(whatsappLink, '_blank');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('image', file);
+
+            // Upload anônimo pro Imgur (seguro e grátis)
+            fetch('https://api.imgur.com/3/image', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Client-ID 55665c0ab5a1b20'  // ID público (funciona sem conta)
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const linkFoto = data.data.link;
+
+                    let mensagem = `Oi Valéria! Quero personalizar uma \( {produto} (€ \){preco}):\n\n`;
+                    mensagem += `📸 Foto para usar: ${linkFoto}\n`;
+                    mensagem += `✍️ Texto: ${texto}\n`;
+                    mensagem += `🖌️ Fonte desejada: ${fonte}\n\n`;
+                    mensagem += `Aguardo seu retorno! ❤️`;
+
+                    const whatsappLink = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(mensagem)}`;
+                    window.open(whatsappLink, '_blank');
+                } else {
+                    alert('Erro ao enviar a foto. Tente novamente ou envie direto pelo WhatsApp.');
+                }
+            })
+            .catch(() => {
+                alert('Problema na conexão. Tente de novo ou me mande direto no WhatsApp!');
+            });
+        }
+    </script>
+</body>
+</html>
