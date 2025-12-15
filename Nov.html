@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valéria Artesanal - Produtos Feitos com Amor</title>
+    <meta name="description" content="Loja artesanal com canecas personalizadas, itens de costura, joias, velas perfumadas e mel puro.">
+    <style>
+        body { font-family: 'Georgia', serif; margin: 0; padding: 0; background: #f9f5f0; color: #333; }
+        header { background: #8b6f47; color: white; text-align: center; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        .banner { background: url('https://img.freepik.com/fotos-gratis/tag-regua-tesoura-varas-fita-de-renda-forma-de-jar-e-coracao-vazia-no-pano-de-fundo-de-madeira_23-2148164432.jpg') center/cover no-repeat; height: 400px; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); font-size: 3rem; }
+        section { padding: 4rem 10%; max-width: 1200px; margin: auto; }
+        h2 { text-align: center; color: #8b6f47; margin-bottom: 2rem; font-size: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .card { background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; padding: 1rem; transition: transform 0.3s; }
+        .card:hover { transform: scale(1.05); }
+        .card img { width: 100%; height: auto; border-radius: 8px; }
+        .price { font-weight: bold; color: #8b6f47; font-size: 1.2rem; }
+        button { background: #8b6f47; color: white; border: none; padding: 0.8rem 1.5rem; cursor: pointer; border-radius: 5px; margin-top: 1rem; }
+        button:hover { background: #a08a5e; }
+        #cart { position: fixed; top: 10px; right: 10px; background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration: none; }
+        footer { background: #8b6f47; color: white; text-align: center; padding: 2rem; margin-top: 2rem; }
+        @media (max-width: 768px) { .banner { font-size: 2rem; height: 300px; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Valéria Artesanal</h1>
+        <p>Produtos feitos à mão com amor e carinho 💕</p>
+    </header>
+
+    <div class="banner">
+        <div>Bem-vindo à minha lojinha artesanal!</div>
+    </div>
+
+    <section id="personalizadas">
+        <h2>Canecas Personalizadas</h2>
+        <p style="text-align:center;max-width:800px;margin:auto;">Escolha um modelo e personalize com nome, frase ou foto! Envie sua ideia por WhatsApp.</p>
+        <div class="grid">
+            <div class="card">
+                <img src="https://i.etsystatic.com/22106127/r/il/1fea04/4162689573/il_570xN.4162689573_if09.jpg" alt="Caneca personalizada modelo 1">
+                <h3>Caneca Branca Clássica</h3>
+                <p class="price">R$ 45,00</p>
+                <button onclick="addToCart('Caneca Branca Clássica', 45)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="card">
+                <img src="https://img.elo7.com.br/product/main/2EB09CB/mockup-caneca-frente-e-verso-photoshop.jpg" alt="Caneca personalizada frente e verso">
+                <h3>Caneca Frente e Verso</h3>
+                <p class="price">R$ 50,00</p>
+                <button onclick="addToCart('Caneca Frente e Verso', 50)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="card">
+                <img src="https://i.etsystatic.com/27830801/r/il/3cfa6c/3720894870/il_570xN.3720894870_n6hk.jpg" alt="Caneca dupla rústica">
+                <h3>Caneca Dupla Rústica</h3>
+                <p class="price">R$ 55,00</p>
+                <button onclick="addToCart('Caneca Dupla Rústica', 55)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="card">
+                <img src="https://i.etsystatic.com/14910661/r/il/2661d6/2064858237/il_570xN.2064858237_50vm.jpg" alt="Caneca de café branca">
+                <h3>Caneca de Café Simples</h3>
+                <p class="price">R$ 40,00</p>
+                <button onclick="addToCart('Caneca de Café Simples', 40)">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Adicione mais canecas se quiser -->
+        </div>
+    </section>
+
+    <section id="outros">
+        <h2>Outros Produtos Artesanais</h2>
+        <div class="grid">
+            <!-- Costura -->
+            <div class="card">
+                <img src="https://img.elo7.com.br/product/600x380/49BB7A0/bolsa-de-praia-de-retalhos-de-patchwork-colorida-bolsa-de-patchwork.jpg" alt="Bolsa patchwork costura">
+                <h3>Bolsa Patchwork</h3>
+                <p class="price">R$ 80,00</p>
+                <button onclick="addToCart('Bolsa Patchwork', 80)">Adicionar</button>
+            </div>
+            <!-- Joias -->
+            <div class="card">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHQfm2PR9UD3TjXsWB3t_Rmlyn7_xSz4M-g6mRhppEIIREktOisT9RDn8BDCCf3owOw6ti9GUBFWz2ZRkUOpfphW6wbjcE-7_nKKZF7O5oFE_ToZYWqdwmAyWFuF9NtjtlqM8EKf5H5y_qf8BFPcNMuMK89uGn15rPiGssTzG9KW-7BwbYdV7FOTcTwuE/w1200-h630-p-k-no-nu/left3.png" alt="Brincos e colar artesanal">
+                <h3>Conjunto Brincos + Colar</h3>
+                <p class="price">R$ 60,00</p>
+                <button onclick="addToCart('Conjunto Joias', 60)">Adicionar</button>
+            </div>
+            <!-- Velas -->
+            <div class="card">
+                <img src="https://i.etsystatic.com/18630919/r/il/dc5617/4404756464/il_fullxfull.4404756464_88kj.jpg" alt="Vela artesanal em coco">
+                <h3>Vela Perfumada de Soja</h3>
+                <p class="price">R$ 35,00</p>
+                <button onclick="addToCart('Vela Perfumada', 35)">Adicionar</button>
+            </div>
+            <!-- Mel -->
+            <div class="card">
+                <img src="https://melpimentel.com.br/wp-content/uploads/2025/07/mel-florada-eucalipto-720g-1.webp" alt="Pote de mel puro artesanal">
+                <h3>Mel Puro 720g</h3>
+                <p class="price">R$ 50,00</p>
+                <button onclick="addToCart('Mel Puro 720g', 50)">Adicionar</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="cart">
+        <strong>Carrinho: <span id="cart-count">0</span> itens</strong><br>
+        Total: R$ <span id="cart-total">0.00</span>
+    </div>
+
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20da%20lojinha%20Val%C3%A9ria%20Artesanal" class="whatsapp" target="_blank">💬</a>
+
+    <footer>
+        <p>&copy; 2025 Valéria Artesanal - Todos os direitos reservados</p>
+        <p>Envio para todo Brasil 📦 | Pagamento via Pix ou Transferência</p>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+        let cartTotal = 0;
+
+        function addToCart(name, price) {
+            cartCount++;
+            cartTotal += price;
+            document.getElementById('cart-count').innerText = cartCount;
+            document.getElementById('cart-total').innerText = cartTotal.toFixed(2);
+            alert(`\( {name} adicionado ao carrinho! Total atual: R \) ${cartTotal.toFixed(2)}`);
+        }
+    </script>
+</body>
+</html>
