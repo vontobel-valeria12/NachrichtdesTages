@@ -7,134 +7,134 @@
     <style>
         body {
             font-family: 'Georgia', serif;
-            background: #fdf8f5;
+            background: #fffaf0;
             color: #5d4037;
             margin: 0;
             padding: 0;
             text-align: center;
         }
         header {
-            background: url('https://i.etsystatic.com/6335667/r/il/ca34ab/412995653/il_570xN.412995653_qk7v.jpg') center/cover no-repeat;
-            padding: 100px 20px;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            background: url('https://us.123rf.com/450wm/mash3r/mash3r1712/mash3r171200016/91097139-white-rain-of-heart-love-with-paper-cut-flying-hearts-romantic-invitation-card-origami-cloud.jpg') center/cover no-repeat;
+            padding: 120px 20px;
+            color: #5d4037;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
         }
-        h1 { font-size: 3em; margin: 0; }
+        h1 { font-size: 3.5em; margin: 0; color: #d47a9e; }
         h2 { color: #d47a9e; margin: 40px 0 20px; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .produto {
             background: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s;
         }
-        .produto:hover { transform: scale(1.05); }
-        .produto img { max-width: 100%; border-radius: 10px; }
-        .preco { font-size: 1.5em; color: #d47a9e; font-weight: bold; }
+        .produto:hover { transform: translateY(-10px); }
+        .produto img { max-width: 100%; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .preco { font-size: 1.6em; color: #d47a9e; font-weight: bold; margin: 15px 0; }
         button {
             background: #d47a9e;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 30px;
             cursor: pointer;
-            font-size: 1em;
-            margin-top: 10px;
+            font-size: 1.1em;
         }
-        button:hover { background: #b5597d; }
+        button:hover { background: #c06286; }
         #carrinho {
             background: white;
-            padding: 20px;
-            margin: 40px auto;
-            max-width: 600px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin: 50px auto;
+            max-width: 700px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
         }
-        #lista-itens { list-style: none; padding: 0; }
-        #total { font-size: 1.5em; font-weight: bold; color: #d47a9e; }
+        #lista-itens { list-style: none; padding: 0; margin: 20px 0; }
+        #lista-itens li { padding: 10px; background: #f9f9f9; margin: 10px 0; border-radius: 10px; }
+        #total { font-size: 1.8em; font-weight: bold; color: #d47a9e; }
         footer {
             background: #d47a9e;
             color: white;
-            padding: 20px;
-            margin-top: 50px;
+            padding: 30px;
+            margin-top: 60px;
         }
         .whatsapp-btn {
             background: #25D366;
-            padding: 15px;
-            font-size: 1.2em;
+            padding: 15px 30px;
+            font-size: 1.3em;
+            border-radius: 30px;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Valéria Artesanal</h1>
-        <p>Produtos personalizados feitos com muito amor ❤️</p>
+        <p>Produtos personalizados feitos à mão com muito amor ❤️</p>
     </header>
 
     <div class="container">
         <h2>Nossos Produtos</h2>
-        <p>Tudo feito à mão e personalizado do jeitinho que você quiser: nome, frase, foto, data especial...</p>
+        <p>Tudo artesanal e personalizado: nomes, frases, fotos, datas especiais... Do jeitinho que você sonha!</p>
 
         <div class="produtos">
             <!-- Canecas -->
             <div class="produto">
-                <img src="https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/caneca-frase-motivacional-325ml-caneca-branca-personalizada-metalnox/blackwhitecomerciobrinquedos/e53ef698737f11eeb70c4201ac185040/89bf1044984cd102ef0cea8efd6fefb8.jpeg" alt="Caneca personalizada">
+                <img src="https://img.elo7.com.br/product/zoom/367C924/caneca-personalizada-letra-e-nome-com-frase-viver-um-dia-caneca-promocao.jpg" alt="Caneca personalizada com nome e frase">
                 <h3>Canecas Personalizadas</h3>
-                <p>Canecas de cerâmica com frase, nome ou foto. Perfeitas para presentear!</p>
+                <p>De cerâmica, com frase motivacional, nome ou foto. Ideais para presentear com carinho!</p>
                 <p class="preco">A partir de R$ 35,00</p>
                 <button onclick="adicionarAoCarrinho('Caneca Personalizada', 35)">Adicionar ao Interesse</button>
             </div>
 
             <!-- Velas -->
             <div class="produto">
-                <img src="https://img.elo7.com.br/product/zoom/4E1E1D1/vela-aromatica-personalizada.jpg" alt="Vela aromática artesanal">
+                <img src="https://plimpapier.com/10933-large_default/vela-aromatica-em-frasco-de-vidro-etiqueta-papel-lembranca.jpg" alt="Vela aromática em pote de vidro personalizada">
                 <h3>Velas Aromáticas</h3>
-                <p>Velas em pote de vidro com aromas deliciosos e etiqueta personalizada.</p>
+                <p>Em pote de vidro, aromas incríveis e etiqueta personalizada. Perfeitas para relaxar ou presentear.</p>
                 <p class="preco">A partir de R$ 40,00</p>
                 <button onclick="adicionarAoCarrinho('Vela Aromática', 40)">Adicionar ao Interesse</button>
             </div>
 
             <!-- Mel -->
             <div class="produto">
-                <img src="https://img.elo7.com.br/product/zoom/40F742B/pote-de-mel-para-casamento-lembrancinha-masha.jpg" alt="Pote de mel artesanal">
+                <img src="https://img.elo7.com.br/product/zoom/2AF974B/lembrancinha-de-nascimento-com-mel-lembrancinha-pote-de-mel.jpg" alt="Pote de mel natural com laço e etiqueta">
                 <h3>Potes de Mel Natural</h3>
-                <p>Mel puro com laço e etiqueta personalizada. Ótimo para lembrancinhas!</p>
+                <p>Mel puro, com laço fofo e etiqueta personalizada. Ótimas lembrancinhas para eventos!</p>
                 <p class="preco">A partir de R$ 25,00</p>
                 <button onclick="adicionarAoCarrinho('Pote de Mel', 25)">Adicionar ao Interesse</button>
             </div>
 
             <!-- Brincos -->
             <div class="produto">
-                <img src="https://images.tcdn.com.br/img/img_prod/1022170/brinco_noiva_cacho_de_perolas_handmade_casamento_3696_1_58292e669c24eaaa0aeaf5b0fc16bbe8.jpg" alt="Brincos artesanais">
+                <img src="https://i.etsystatic.com/25146997/r/il/1de4ba/5964238428/il_570xN.5964238428_9qos.jpg" alt="Brincos artesanais delicados com pérolas">
                 <h3>Brincos Artesanais</h3>
-                <p>Bijuterias delicadas feitas à mão, com pedras e pérolas.</p>
+                <p>Feitos à mão com pérolas e pedras delicadas. Elegantes e únicos!</p>
                 <p class="preco">A partir de R$ 30,00</p>
                 <button onclick="adicionarAoCarrinho('Brincos Artesanais', 30)">Adicionar ao Interesse</button>
             </div>
         </div>
 
-        <h2>Como Funciona?</h2>
-        <p>1. Escolha os produtos que te interessam<br>
-           2. Clique em "Adicionar ao Interesse"<br>
-           3. Envie a lista pronta pro meu WhatsApp e me conte como quer personalizar!</p>
+        <h2>Como Pedir?</h2>
+        <p>1. Adicione os produtos que gostou<br>
+           2. Envie a lista pro WhatsApp<br>
+           3. Me conte todos os detalhes da personalização!</p>
 
         <div id="carrinho">
             <h2>Seu Carrinho de Interesse</h2>
             <ul id="lista-itens"></ul>
             <p id="total">Total estimado: R$ 0,00</p>
-            <button class="whatsapp-btn" onclick="enviarWhatsApp()">Enviar Pedido no WhatsApp</button>
+            <button class="whatsapp-btn" onclick="enviarWhatsApp()">Enviar no WhatsApp</button>
         </div>
 
-        <!-- Seção para depoimentos reais no futuro -->
-        <h2>Depoimentos de Clientes</h2>
-        <p>(Em breve: opiniões reais de quem já comprou ❤️)</p>
+        <h2>Depoimentos</h2>
+        <p>Em breve, comentários reais de clientes felizes ❤️</p>
     </div>
 
     <footer>
-        <p>Valéria Artesanal © 2025 | Feito com carinho</p>
-        <p>Contato: <a href="https://wa.me/SEUNUMERO" style="color:white;">WhatsApp</a> (substitua SEUNUMERO pelo seu número com DDD)</p>
+        <p>Valéria Artesanal © 2025 | Tudo feito com carinho à mão</p>
+        <p>Contato direto: <a href="https://wa.me/SEUNUMERO" style="color:white; text-decoration: underline;">WhatsApp</a> (coloca seu número com DDD, ex: 5511999999999)</p>
     </footer>
 
     <script>
@@ -160,14 +160,14 @@
 
         function enviarWhatsApp() {
             if (carrinho.length === 0) {
-                alert('Adicione algum produto primeiro!');
+                alert('Adicione pelo menos um produto!');
                 return;
             }
-            let mensagem = 'Olá Valéria! Gostei desses produtos:\n\n';
+            let mensagem = 'Oi Valéria! Estou interessada nesses produtos:\n\n';
             carrinho.forEach(item => {
                 mensagem += `• \( {item.nome} - R \) ${item.preco}\n`;
             });
-            mensagem += `\nTotal estimado: R$ ${total.toFixed(2)}\n\nQuero personalizar assim: `;
+            mensagem += `\nTotal estimado: R$ ${total.toFixed(2)}\n\nQuero personalizar da seguinte forma: (me conte os detalhes!)`;
             const whatsappLink = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(mensagem)}`;
             window.open(whatsappLink, '_blank');
         }
