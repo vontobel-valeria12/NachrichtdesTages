@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valéria Artesanal - Produtos Feitos com Amor</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: #fdf8f5;
+            color: #5d4037;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: url('https://i.etsystatic.com/6335667/r/il/ca34ab/412995653/il_570xN.412995653_qk7v.jpg') center/cover no-repeat;
+            padding: 100px 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        h1 { font-size: 3em; margin: 0; }
+        h2 { color: #d47a9e; margin: 40px 0 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .produto {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .produto:hover { transform: scale(1.05); }
+        .produto img { max-width: 100%; border-radius: 10px; }
+        .preco { font-size: 1.5em; color: #d47a9e; font-weight: bold; }
+        button {
+            background: #d47a9e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        button:hover { background: #b5597d; }
+        #carrinho {
+            background: white;
+            padding: 20px;
+            margin: 40px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        #lista-itens { list-style: none; padding: 0; }
+        #total { font-size: 1.5em; font-weight: bold; color: #d47a9e; }
+        footer {
+            background: #d47a9e;
+            color: white;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .whatsapp-btn {
+            background: #25D366;
+            padding: 15px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Valéria Artesanal</h1>
+        <p>Produtos personalizados feitos com muito amor ❤️</p>
+    </header>
+
+    <div class="container">
+        <h2>Nossos Produtos</h2>
+        <p>Tudo feito à mão e personalizado do jeitinho que você quiser: nome, frase, foto, data especial...</p>
+
+        <div class="produtos">
+            <!-- Canecas -->
+            <div class="produto">
+                <img src="https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/caneca-frase-motivacional-325ml-caneca-branca-personalizada-metalnox/blackwhitecomerciobrinquedos/e53ef698737f11eeb70c4201ac185040/89bf1044984cd102ef0cea8efd6fefb8.jpeg" alt="Caneca personalizada">
+                <h3>Canecas Personalizadas</h3>
+                <p>Canecas de cerâmica com frase, nome ou foto. Perfeitas para presentear!</p>
+                <p class="preco">A partir de R$ 35,00</p>
+                <button onclick="adicionarAoCarrinho('Caneca Personalizada', 35)">Adicionar ao Interesse</button>
+            </div>
+
+            <!-- Velas -->
+            <div class="produto">
+                <img src="https://img.elo7.com.br/product/zoom/4E1E1D1/vela-aromatica-personalizada.jpg" alt="Vela aromática artesanal">
+                <h3>Velas Aromáticas</h3>
+                <p>Velas em pote de vidro com aromas deliciosos e etiqueta personalizada.</p>
+                <p class="preco">A partir de R$ 40,00</p>
+                <button onclick="adicionarAoCarrinho('Vela Aromática', 40)">Adicionar ao Interesse</button>
+            </div>
+
+            <!-- Mel -->
+            <div class="produto">
+                <img src="https://img.elo7.com.br/product/zoom/40F742B/pote-de-mel-para-casamento-lembrancinha-masha.jpg" alt="Pote de mel artesanal">
+                <h3>Potes de Mel Natural</h3>
+                <p>Mel puro com laço e etiqueta personalizada. Ótimo para lembrancinhas!</p>
+                <p class="preco">A partir de R$ 25,00</p>
+                <button onclick="adicionarAoCarrinho('Pote de Mel', 25)">Adicionar ao Interesse</button>
+            </div>
+
+            <!-- Brincos -->
+            <div class="produto">
+                <img src="https://images.tcdn.com.br/img/img_prod/1022170/brinco_noiva_cacho_de_perolas_handmade_casamento_3696_1_58292e669c24eaaa0aeaf5b0fc16bbe8.jpg" alt="Brincos artesanais">
+                <h3>Brincos Artesanais</h3>
+                <p>Bijuterias delicadas feitas à mão, com pedras e pérolas.</p>
+                <p class="preco">A partir de R$ 30,00</p>
+                <button onclick="adicionarAoCarrinho('Brincos Artesanais', 30)">Adicionar ao Interesse</button>
+            </div>
+        </div>
+
+        <h2>Como Funciona?</h2>
+        <p>1. Escolha os produtos que te interessam<br>
+           2. Clique em "Adicionar ao Interesse"<br>
+           3. Envie a lista pronta pro meu WhatsApp e me conte como quer personalizar!</p>
+
+        <div id="carrinho">
+            <h2>Seu Carrinho de Interesse</h2>
+            <ul id="lista-itens"></ul>
+            <p id="total">Total estimado: R$ 0,00</p>
+            <button class="whatsapp-btn" onclick="enviarWhatsApp()">Enviar Pedido no WhatsApp</button>
+        </div>
+
+        <!-- Seção para depoimentos reais no futuro -->
+        <h2>Depoimentos de Clientes</h2>
+        <p>(Em breve: opiniões reais de quem já comprou ❤️)</p>
+    </div>
+
+    <footer>
+        <p>Valéria Artesanal © 2025 | Feito com carinho</p>
+        <p>Contato: <a href="https://wa.me/SEUNUMERO" style="color:white;">WhatsApp</a> (substitua SEUNUMERO pelo seu número com DDD)</p>
+    </footer>
+
+    <script>
+        let carrinho = [];
+        let total = 0;
+
+        function adicionarAoCarrinho(nome, preco) {
+            carrinho.push({nome, preco});
+            total += preco;
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            const lista = document.getElementById('lista-itens');
+            lista.innerHTML = '';
+            carrinho.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `\( {item.nome} - R \) ${item.preco.toFixed(2)}`;
+                lista.appendChild(li);
+            });
+            document.getElementById('total').textContent = `Total estimado: R$ ${total.toFixed(2)}`;
+        }
+
+        function enviarWhatsApp() {
+            if (carrinho.length === 0) {
+                alert('Adicione algum produto primeiro!');
+                return;
+            }
+            let mensagem = 'Olá Valéria! Gostei desses produtos:\n\n';
+            carrinho.forEach(item => {
+                mensagem += `• \( {item.nome} - R \) ${item.preco}\n`;
+            });
+            mensagem += `\nTotal estimado: R$ ${total.toFixed(2)}\n\nQuero personalizar assim: `;
+            const whatsappLink = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(mensagem)}`;
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+</body>
+</html>
