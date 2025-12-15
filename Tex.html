@@ -87,6 +87,37 @@
         <button id="btn-limpar">Limpar</button>
         <button id="btn-pagamento">Finalizar Pedido</button>
     </div>
+<!-- Modal de Personalização -->
+<div id="modal-personalizar" class="modal escondido">
+    <div class="modal-content">
+        <span class="fechar">×</span>
+        <h2>Personalize seu Produto</h2>
+        <p id="nome-produto-modal"></p>
+
+        <label>Texto personalizado:</label>
+        <input type="text" id="texto-custom" placeholder="Ex: Nome, frase especial">
+
+        <label>Cor do texto:</label>
+        <select id="cor-texto">
+            <option value="#000000">Preto</option>
+            <option value="#FFFFFF">Branco</option>
+            <option value="#FF0000">Vermelho</option>
+            <option value="#0000FF">Azul</option>
+        </select>
+
+        <label>Tamanho da fonte:</label>
+        <input type="range" id="tamanho-fonte" min="20" max="80" value="40">
+
+        <!-- Prévia com Canvas -->
+        <h3>Prévia do produto:</h3>
+        <canvas id="canvas-previa" width="400" height="500"></canvas>
+
+        <label>Upload de foto (opcional - em breve):</label>
+        <input type="file" id="upload-foto" accept="image/*" disabled> <!-- Desativado por enquanto -->
+
+        <button id="btn-aplicar-personalizacao">Adicionar ao Carrinho</button>
+    </div>
+</div>
 
     <script src="script.js"></script>
 </body>
