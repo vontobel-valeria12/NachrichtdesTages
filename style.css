@@ -36,3 +36,10 @@ nav a { margin: 0 15px; text-decoration: none; color: #333; }
 /* Outros (carrinho dropdown, escondido, etc.) */
 .escondido { display: none; }
 .carrinho-dropdown { position: absolute; right: 20px; top: 80px; background: white; border: 1px solid #ddd; padding: 20px; width: 350px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+#canvas-previa {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px 0;
+    max-width: 100%;
+    background: #f0f0f0;
+}
