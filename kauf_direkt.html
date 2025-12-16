@@ -126,13 +126,38 @@
             Alle Produkte sind handgefertigt und  Unikat
         </p>
 
-        <a href="https://wa.me/SEU_NUMERO_WHATSAPP?text=Hallo%20Valéria,%20ich%20möchte%20einen%20Artikel%20kaufen%20(Direktkauf)." 
-           target="_blank" class="cta-button">
-            <span class="whatsapp-icon">💬</span> Jetzt direkt bestellen und Details besprechen
-        </a>
-    </div>
+            <p> Alle Details Ihrer Bestellung werden direkt mit mir über WhatsApp besprochen.
+Keine automatischen Antworten.
+Jede Kundin und jeder Kunde wird mit Aufmerksamkeit, Herz und Sorgfalt in jeder Phase betreut.</p>
 
-    <div class="section">
+ <div class="buttons">
+        <a href="https://api.whatsapp.com/send?phone=41765019056&text=Hallo!%20Ich%20bin"
+           class="whatsapp-button" target="_blank">
+          <i class="fab fa-whatsapp"></i> Bestellung via WhatsApp
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="product-specs">
+  <ul class="tabs">
+    <li onclick="mostrarAba('zahlung')">
+    <i class="fas fa-credit-card"></i> Zahlungsarten </li>
+  </ul>
+
+  <div class="specs-content" id="zahlung" style="display: none;">
+    <p><strong>Zahlungsarten:</strong></p>
+    <ul>
+      <li>✔️ Twint</li>
+      <li>✔️ Banküberweisung</li>
+      <li>✔️ Barzahlung bei Abholung</li>
+    </ul>
+  </div>
+</div>
+
+</main>
+ <div class="section">
         <h2>Ihre Vorteile: Handgefertigt & Persönlich aus Thurgau</h2>
         <p>
             Da wir Wert auf höchste Qualität und die Individualität jedes Stücks legen, erfolgt die gesamte Abwicklung persönlich mit mir.
@@ -173,7 +198,38 @@
 
 </div>
 
-<script>
+ <script>
+  function mostrarAba(id) {
+  const abas = document.querySelectorAll('.specs-content');
+  const botoes = document.querySelectorAll('.tabs li');
+
+  abas.forEach(el => el.style.display = 'none');
+  botoes.forEach(el => el.classList.remove('active'));
+
+  document.getElementById(id).style.display = 'block';
+  event.target.classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
+  const mainImage = document.querySelector('.product-gallery img');
+
+  thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+      mainImage.src = thumbnail.src;
+    });
+  });
+
+  const whatsappBtn = document.querySelector('.whatsapp-button');
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', () => {
+      const quantity = document.getElementById('quantity')?.value || 1;
+      console.log(`WhatsApp Bestellung mit Menge: ${quantity}`);
+    });
+  
+
+
+
     // === JAVASCRIPT SIMPLES PARA ABAS ===
     document.addEventListener('DOMContentLoaded', () => {
         const tabs = document.querySelectorAll('.tab-button');
