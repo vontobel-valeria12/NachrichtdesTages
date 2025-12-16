@@ -3,115 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bestellung abschließen - Valeria Vontobel | Handgemacht in Weinfelden</title>
+    <title>Bestellung abschließen - Valeria Vontobel | Handgemacht</title>
     <style>
-        /* === RESET & GRUNDSTYLING === */
+        /* === RESET & MODERN STYLING === */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* Fonte moderna e limpa */
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #F0FDF4; /* Verde Menta Suave */
             color: #333;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 25px 35px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
-        /* === HEADLINE & TEXT === */
-        h1, h2 {
-            color: #4CAF50; /* Um verde que remete a confiança/WhatsApp */
+        /* === HEADLINE & TEXT (TOQUE CRIATIVO) === */
+        h1 {
+            color: #1E8449; /* Verde Floresta */
             text-align: center;
+            font-size: 2em;
+            margin-bottom: 10px;
         }
 
-        .section {
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 20px;
+        h2 {
+            color: #2C3E50; /* Azul escuro/cinza para contraste */
+            border-bottom: 2px solid #E6F3E9;
+            padding-bottom: 8px;
+            margin-top: 30px;
         }
 
-        .highlight-text {
+        .intro-text {
             text-align: center;
-            font-size: 1.1em;
+            font-size: 1.2em;
             margin-bottom: 30px;
-            font-weight: 500;
+            color: #555;
+            font-weight: 300;
         }
 
         /* === BUTTON STYLING (CTA) === */
         .cta-button {
             display: block;
-            width: 80%;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 15px 20px;
-            background-color: #25D366; /* Cor oficial do WhatsApp */
+            width: 90%;
+            max-width: 450px;
+            margin: 25px auto;
+            padding: 18px 20px;
+            background-color: #25D366; /* Verde WhatsApp padrão */
             color: white;
             text-align: center;
             text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1em;
+            border-radius: 8px;
+            font-size: 1.2em;
             font-weight: bold;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
         }
 
         .cta-button:hover {
             background-color: #128C7E;
+            transform: translateY(-2px);
         }
 
-        .whatsapp-icon {
-            margin-right: 10px;
-        }
-
-        /* === INFO BOXES (Para Twint) === */
-        .info-box {
-            background-color: #e6ffe6;
-            border-left: 5px solid #4CAF50;
+        /* === HORÁRIO DE ATENDIMENTO === */
+        .schedule-box {
+            background-color: #E6F3E9;
             padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
         }
 
-        .info-box p {
-            margin: 5px 0;
-        }
-
-        /* === ABAS (Tabs) STYLING === */
-        .tabs {
-            display: flex;
-            border-bottom: 2px solid #ddd;
-            margin-top: 30px;
-        }
-
-        .tab-button {
-            padding: 10px 15px;
-            cursor: pointer;
-            border: none;
-            background-color: transparent;
-            font-size: 1em;
-            font-weight: bold;
-            color: #666;
-            transition: color 0.3s, border-bottom 0.3s;
-        }
-
-        .tab-button.active {
-            color: #4CAF50;
-            border-bottom: 2px solid #4CAF50;
-        }
-
-        .tab-content {
-            padding: 20px 0;
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
+        .schedule-box strong {
+            color: #1E8449;
         }
     </style>
 </head>
@@ -119,136 +88,43 @@
 
 <div class="container">
 
-    <div class="section">
-        <h1>Herzlich willkommen in meinem Atelier in Weinfelden!</h1>
-        <p class="highlight-text">
-            Ich bin Valéria Vontobel, eine passionierte Kunsthandwerkerin mit einem Herz für kreative Schneiderei, Design und einzigartige Personalisierung.
-            Alle Produkte sind handgefertigt und  Unikat
-        </p>
+    <h1>Herzlich willkommen in meinem Atelier!</h1>
+    
+    <p class="intro-text">
+        Ich bin **Valéria Vontobel**, eine passionierte Handwerkerin mit Liebe zur kreativen Schneiderei und individuellem Design.
+        Alle Produkte hier sind **handgefertigt** in **Weinfelden** – persönlich von mir oder von ausgewählten Kolleginnen. 
+        Jedes Stück ist ein Unikat.
+    </p>
 
-            <p> Alle Details Ihrer Bestellung werden direkt mit mir über WhatsApp besprochen.
-Keine automatischen Antworten.
-Jede Kundin und jeder Kunde wird mit Aufmerksamkeit, Herz und Sorgfalt in jeder Phase betreut.</p>
-
- <div class="buttons">
-        <a href="https://api.whatsapp.com/send?phone=41765019056&text=Hallo!%20Ich%20bin"
-           class="whatsapp-button" target="_blank">
-          <i class="fab fa-whatsapp"></i> Bestellung via WhatsApp
-        </a>
-
-      </div>
+    <div class="schedule-box">
+        <strong>Öffnungszeiten für persönliche Antworten:</strong> Montag bis Freitag, 9:00 bis 16:00 Uhr.<br>
+        <small>Nach 16:00 Uhr und am Wochenende erhalten Sie eine automatische Antwort.</small>
     </div>
-  </div>
 
-  <div class="product-specs">
-  <ul class="tabs">
-    <li onclick="mostrarAba('zahlung')">
-    <i class="fas fa-credit-card"></i> Zahlungsarten </li>
-  </ul>
+    <a href="https://wa.me/SEU_NUMERO_WHATSAPP?text=Guten%20Tag%20Valéria,%20ich%20möchte%20einen%20Artikel%20kaufen%20(Direktkauf)." 
+       target="_blank" class="cta-button">
+        💬 Jetzt direkt bestellen und Details besprechen
+    </a>
 
-  <div class="specs-content" id="zahlung" style="display: none;">
-    <p><strong>Zahlungsarten:</strong></p>
+    <h2>Ihr persönlicher Einkaufsservice</h2>
+    
+    <p>
+        Um die **hohe Qualität** und die **Individualität** jedes Stücks zu garantieren, wickle ich Ihre Bestellung persönlich via WhatsApp ab.
+        Ich freue mich darauf, Ihr Anliegen mit **Herz und Sorgfalt** zu betreuen.
+    </p>
+    
     <ul>
-      <li>✔️ Twint</li>
-      <li>✔️ Banküberweisung</li>
-      <li>✔️ Barzahlung bei Abholung</li>
+        <li>**Versand oder Abholung:** Wir klären, ob Sie in **Weinfelden** abholen möchten oder den bequemen Postversand wünschen.</li>
+        <li>**Zahlung:** Direkte Klärung der Zahlungsmethoden wie **TWINT** oder Banküberweisung.</li>
+        <li>**Transparenz:** Wir bestätigen die Verfügbarkeit, den Preis und die Lieferzeit persönlich.</li>
     </ul>
-  </div>
-</div>
-
-</main>
- <div class="section">
-        <h2>Ihre Vorteile: Handgefertigt & Persönlich aus Thurgau</h2>
-        <p>
-            Da wir Wert auf höchste Qualität und die Individualität jedes Stücks legen, erfolgt die gesamte Abwicklung persönlich mit mir.
-            Bestellen Sie direkt über WhatsApp, um unseren menschlichen Service zu erleben  keine automatischen Antworten!
-        </p>
-        
-        <ul>
-            <li>Versand/Abholung: Wir vereinbaren, ob Sie die Ware in meinem Atelier in Weinfelden abholen oder ob sie Ihnen bequem zugesandt wird (Postversand).</li>
-            <li>Transparente Zahlung: Klärung der Zahlungsmethoden (TWINT oder Banküberweisung).</li>
-            <li>Qualitätsgarantie: Ich stelle persönlich sicher, dass Sie mit Ihrem Unikat zu 100% zufrieden sind.</li>
-        </ul>
-        
-        <a href="https://wa.me/SEU_NUMERO_WHATSAPP?text=Hallo%20Valéria,%20ich%20möchte%20einen%20Artikel%20kaufen%20(Direktkauf)." 
-           target="_blank" class="cta-button" style="background-color: #4CAF50; font-size: 1em;">
-            Bestellung und Service direkt mit Valéria Vontobel
-        </a>
-    </div>
-
-    <h2>Wichtige Informationen zur Abwicklung</h2>
-    <div class="tabs">
-        <button class="tab-button active" data-tab="zahlung">Zahlungsarten</button>
-        <button class="tab-button" data-tab="lieferung">Abholung & Versand</button>
-    </div>
-
-    <div id="zahlung" class="tab-content active">
-        <div class="info-box">
-            <p><strong>Bevorzugte Zahlungsart:</strong> Wir akzeptieren TWINT und Banküberweisung.</p>
-            <p>Die TWINT-Nummer bzw. Bankdaten erhalten Sie direkt nach der Bestellbestätigung via WhatsApp.</p>
-        </div>
-    </div>
-
-    <div id="lieferung" class="tab-content">
-        <div class="info-box">
-            <p><strong>Abholung:</strong> Kostenlos in meinem Atelier in 8570 Weinfelden (Thurgau).</p>
-            <p><strong>Versand:</strong> Postversand innerhalb der Schweiz. Die genauen Kosten werden vorab im Chat geklärt.</p>
-        </div>
-    </div>
+    
+    <a href="https://wa.me/SEU_NUMERO_WHATSAPP?text=Guten%20Tag%20Valéria,%20ich%20möchte%20einen%20Artikel%20kaufen%20(Direktkauf)." 
+       target="_blank" class="cta-button" style="background-color: #1E8449;">
+        Bestellung und Service direkt mit Valéria Vontobel
+    </a>
 
 </div>
-
- <script>
-  function mostrarAba(id) {
-  const abas = document.querySelectorAll('.specs-content');
-  const botoes = document.querySelectorAll('.tabs li');
-
-  abas.forEach(el => el.style.display = 'none');
-  botoes.forEach(el => el.classList.remove('active'));
-
-  document.getElementById(id).style.display = 'block';
-  event.target.classList.add('active');
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
-  const mainImage = document.querySelector('.product-gallery img');
-
-  thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener('click', () => {
-      mainImage.src = thumbnail.src;
-    });
-  });
-
-  const whatsappBtn = document.querySelector('.whatsapp-button');
-  if (whatsappBtn) {
-    whatsappBtn.addEventListener('click', () => {
-      const quantity = document.getElementById('quantity')?.value || 1;
-      console.log(`WhatsApp Bestellung mit Menge: ${quantity}`);
-    });
-  
-
-
-
-    // === JAVASCRIPT SIMPLES PARA ABAS ===
-    document.addEventListener('DOMContentLoaded', () => {
-        const tabs = document.querySelectorAll('.tab-button');
-        const contents = document.querySelectorAll('.tab-content');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // 1. Desativa todos os botões e conteúdos
-                tabs.forEach(t => t.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('active'));
-
-                // 2. Ativa o botão e conteúdo clicados
-                tab.classList.add('active');
-                const targetId = tab.getAttribute('data-tab');
-                document.getElementById(targetId).classList.add('active');
-            });
-        });
-    });
-</script>
 
 </body>
 </html>
