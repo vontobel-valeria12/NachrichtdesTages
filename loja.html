@@ -5,67 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valéria Artesanal - Produtos Feitos com Amor</title>
     <style>
-        body {
-            font-family: 'Georgia', serif;
-            background: #fffaf0;
-            color: #5d4037;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background: url('https://us.123rf.com/450wm/mash3r/mash3r1712/mash3r171200016/91097139-white-rain-of-heart-love-with-paper-cut-flying-hearts-romantic-invitation-card-origami-cloud.jpg') center/cover no-repeat;
-            padding: 120px 20px;
-            color: #5d4037;
-            text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
-        }
-        h1 { font-size: 3.5em; margin: 0; color: #d47a9e; }
-        h2 { color: #d47a9e; margin: 40px 0 20px; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .produto {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-        .produto:hover { transform: translateY(-10px); }
-        .produto img { max-width: 100%; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .preco { font-size: 1.6em; color: #d47a9e; font-weight: bold; margin: 15px 0; }
-        button {
-            background: #d47a9e;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1.1em;
-        }
-        button:hover { background: #c06286; }
-        #carrinho {
-            background: white;
-            padding: 30px;
-            margin: 50px auto;
-            max-width: 700px;
-            border-radius: 20px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
-        #lista-itens { list-style: none; padding: 0; margin: 20px 0; }
-        #lista-itens li { padding: 10px; background: #f9f9f9; margin: 10px 0; border-radius: 10px; }
-        #total { font-size: 1.8em; font-weight: bold; color: #d47a9e; }
-        footer {
-            background: #d47a9e;
-            color: white;
-            padding: 30px;
-            margin-top: 60px;
-        }
-        .whatsapp-btn {
-            background: #25D366;
-            padding: 15px 30px;
-            font-size: 1.3em;
-            border-radius: 30px;
-        }
+     /* Grundstyling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Sehr dunkles Anthrazit */
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    color: #d4af37; /* Gold */
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Filter-Buttons Styling */
+#filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 30px; /* Abgerundete elegante Buttons */
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn:hover, .btn.active {
+    background: #d4af37;
+    color: #121212;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Das Raster (Grid) - Hier passiert die Magie */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Abstand zwischen den Bildern */
+}
+
+/* Jede Spalte (Column) */
+.column {
+    display: none; /* Wird vom JS gesteuert */
+    flex: 1 1 calc(25% - 30px); /* 4 Bilder pro Zeile */
+    max-width: calc(25% - 30px);
+    box-sizing: border-box;
+}
+
+/* Wenn die Klasse "show" durch JS hinzugefügt wird */
+.show {
+    display: block;
+}
+
+/* Die Bilder selbst */
+.column img {
+    width: 100%;
+    height: 250px; /* Feste Höhe für Symmetrie */
+    object-fit: cover; /* Verhindert Verzerrung */
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.4s ease;
+    filter: grayscale(20%); /* Leicht dezente Farben */
+}
+
+.column img:hover {
+    transform: scale(1.03);
+    border-color: #d4af37;
+    filter: grayscale(0%);
+}
+
+/* Responsive für Tablets (2 Bilder) und Handys (1 Bild) */
+@media (max-width: 900px) {
+    .column {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .column {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
     </style>
 </head>
 <body>
@@ -245,39 +285,59 @@
     </footer>
 
     <script>
-        let carrinho = [];
-        let total = 0;
+       filterSelection("all");
 
-        function adicionarAoCarrinho(nome, preco) {
-            carrinho.push({nome, preco});
-            total += preco;
-            atualizarCarrinho();
+function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("column");
+    if (c == "all") c = "";
+    
+    for (i = 0; i < x.length; i++) {
+        // Entfernt die Klasse "show", um das Element zu verstecken
+        w3RemoveClass(x[i], "show");
+        // Fügt die Klasse "show" hinzu, wenn die Kategorie passt
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+}
+
+function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
         }
+    }
+}
 
-        function atualizarCarrinho() {
-            const lista = document.getElementById('lista-itens');
-            lista.innerHTML = '';
-            carrinho.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `\( {item.nome} - R \) ${item.preco.toFixed(2)}`;
-                lista.appendChild(li);
-            });
-            document.getElementById('total').textContent = `Total estimado: R$ ${total.toFixed(2)}`;
+function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
         }
+    }
+    element.className = arr1.join(" ");
+}
 
-        function enviarWhatsApp() {
-            if (carrinho.length === 0) {
-                alert('Adicione pelo menos um produto!');
-                return;
+// Aktiven Button markieren
+var btnContainer = document.getElementById("filter-buttons");
+if (btnContainer) {
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            // Sicherheitscheck: Nur ersetzen, wenn ein aktiver Button existiert
+            if (current.length > 0) {
+                current[0].className = current[0].className.replace(" active", "");
             }
-            let mensagem = 'Oi Valéria! Estou interessada nesses produtos:\n\n';
-            carrinho.forEach(item => {
-                mensagem += `• \( {item.nome} - R \) ${item.preco}\n`;
-            });
-            mensagem += `\nTotal estimado: R$ ${total.toFixed(2)}\n\nQuero personalizar da seguinte forma: (me conte os detalhes!)`;
-            const whatsappLink = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(mensagem)}`;
-            window.open(whatsappLink, '_blank');
-        }
+            this.className += " active";
+        });
+    }
+}
     </script>
 </body>
 </html>
