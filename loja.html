@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valéria Artesanal - Produtos Feitos com Amor</title>
     <style>
-     /* Grundstyling */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #121212; /* Sehr dunkles Anthrazit */
+    background-color: #121212; 
     color: #e0e0e0;
     margin: 0;
     padding: 20px;
@@ -28,7 +30,7 @@ h1 {
     letter-spacing: 3px;
 }
 
-/* Filter-Buttons Styling */
+
 #filter-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -43,7 +45,7 @@ h1 {
     color: #d4af37;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 30px; /* Abgerundete elegante Buttons */
+    border-radius: 30px;
     transition: all 0.3s ease;
     font-weight: 600;
 }
@@ -54,36 +56,35 @@ h1 {
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 
-/* Das Raster (Grid) - Hier passiert die Magie */
+
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px; /* Abstand zwischen den Bildern */
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-/* Jede Spalte (Column) */
+
 .column {
-    display: none; /* Wird vom JS gesteuert */
-    flex: 1 1 calc(25% - 30px); /* 4 Bilder pro Zeile */
-    max-width: calc(25% - 30px);
+    display: none; 
     box-sizing: border-box;
+  
 }
 
-/* Wenn die Klasse "show" durch JS hinzugefügt wird */
+
 .show {
     display: block;
 }
 
-/* Die Bilder selbst */
+
 .column img {
     width: 100%;
-    height: 250px; /* Feste Höhe für Symmetrie */
-    object-fit: cover; /* Verhindert Verzerrung */
+    height: 250px; 
+    object-fit: cover;
     border-radius: 8px;
     border: 1px solid #333;
     transition: transform 0.4s ease;
-    filter: grayscale(20%); /* Leicht dezente Farben */
+    filter: grayscale(20%); 
 }
 
 .column img:hover {
@@ -92,18 +93,9 @@ h1 {
     filter: grayscale(0%);
 }
 
-/* Responsive für Tablets (2 Bilder) und Handys (1 Bild) */
-@media (max-width: 900px) {
-    .column {
-        flex: 1 1 calc(50% - 20px);
-        max-width: calc(50% - 20px);
-    }
-}
 
-@media (max-width: 600px) {
-    .column {
-        flex: 1 1 100%;
-        max-width: 100%;
+    h1 {
+        font-size: 2rem; 
     }
 }
     </style>
