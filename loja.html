@@ -74,63 +74,170 @@
         <p>Produtos personalizados feitos à mão com muito amor ❤️</p>
     </header>
 
+   
+
     <div class="container">
-        <h2>Nossos Produtos</h2>
-        <p>Tudo artesanal e personalizado: nomes, frases, fotos, datas especiais... Do jeitinho que você sonha!</p>
-
-        <div class="produtos">
-            <!-- Canecas -->
-            <div class="produto">
-                <img src="https://img.elo7.com.br/product/zoom/367C924/caneca-personalizada-letra-e-nome-com-frase-viver-um-dia-caneca-promocao.jpg" alt="Caneca personalizada com nome e frase">
-                <h3>Canecas Personalizadas</h3>
-                <p>De cerâmica, com frase motivacional, nome ou foto. Ideais para presentear com carinho!</p>
-                <p class="preco">A partir de R$ 35,00</p>
-                <button onclick="adicionarAoCarrinho('Caneca Personalizada', 35)">Adicionar ao Interesse</button>
-            </div>
-
-            <!-- Velas -->
-            <div class="produto">
-                <img src="https://plimpapier.com/10933-large_default/vela-aromatica-em-frasco-de-vidro-etiqueta-papel-lembranca.jpg" alt="Vela aromática em pote de vidro personalizada">
-                <h3>Velas Aromáticas</h3>
-                <p>Em pote de vidro, aromas incríveis e etiqueta personalizada. Perfeitas para relaxar ou presentear.</p>
-                <p class="preco">A partir de R$ 40,00</p>
-                <button onclick="adicionarAoCarrinho('Vela Aromática', 40)">Adicionar ao Interesse</button>
-            </div>
-
-            <!-- Mel -->
-            <div class="produto">
-                <img src="https://img.elo7.com.br/product/zoom/2AF974B/lembrancinha-de-nascimento-com-mel-lembrancinha-pote-de-mel.jpg" alt="Pote de mel natural com laço e etiqueta">
-                <h3>Potes de Mel Natural</h3>
-                <p>Mel puro, com laço fofo e etiqueta personalizada. Ótimas lembrancinhas para eventos!</p>
-                <p class="preco">A partir de R$ 25,00</p>
-                <button onclick="adicionarAoCarrinho('Pote de Mel', 25)">Adicionar ao Interesse</button>
-            </div>
-
-            <!-- Brincos -->
-            <div class="produto">
-                <img src="https://i.etsystatic.com/25146997/r/il/1de4ba/5964238428/il_570xN.5964238428_9qos.jpg" alt="Brincos artesanais delicados com pérolas">
-                <h3>Brincos Artesanais</h3>
-                <p>Feitos à mão com pérolas e pedras delicadas. Elegantes e únicos!</p>
-                <p class="preco">A partir de R$ 30,00</p>
-                <button onclick="adicionarAoCarrinho('Brincos Artesanais', 30)">Adicionar ao Interesse</button>
-            </div>
+        <h1>Bildergallerie</h1>
+        
+        <div id="filter-buttons">
+            <button class="btn active" onclick="filterSelection('all')">Alle anzeigen</button>
+            <button class="btn" onclick="filterSelection('natur')">Natur</button>
+            <button class="btn" onclick="filterSelection('schilder')">Schilder</button>
+            <button class="btn" onclick="filterSelection('lustig')">Lustig</button>
+            <button class="btn" onclick="filterSelection('tiere')">Tiere</button>
+            <button class="btn" onclick="filterSelection('Blumen')">Blumen</button>
+            <button class="btn" onclick="filterSelection('liebe')">Liebe</button>
+            <button class="btn" onclick="filterSelection('party')">Party</button>
+            <button class="btn" onclick="filterSelection('flange')">Flange</button>
+            <button class="btn" onclick="filterSelection('sport')">Sport</button>
         </div>
-
-        <h2>Como Pedir?</h2>
-        <p>1. Adicione os produtos que gostou<br>
-           2. Envie a lista pro WhatsApp<br>
-           3. Me conte todos os detalhes da personalização!</p>
-
-        <div id="carrinho">
-            <h2>Seu Carrinho de Interesse</h2>
-            <ul id="lista-itens"></ul>
-            <p id="total">Total estimado: R$ 0,00</p>
-            <button class="whatsapp-btn" onclick="enviarWhatsApp()">Enviar no WhatsApp</button>
-        </div>
-
-        <h2>Depoimentos</h2>
-        <p>Em breve, comentários reais de clientes felizes ❤️</p>
+<div class="row">
+    <div class="column schilder"><img src="design/schilder/001.png" alt="Schilder"></div>
+    <div class="column schilder"><img src="design/schilder/002.png" alt="Schilder"></div>
+    
+    <div class="column tiere"><img src="design/tiere/1000127189.jpg" alt="Tiere"></div>
+    <div class="column tiere"><img src="design/tiere/1000127190.jpg" alt="Tiere"></div>
+    
+    <div class="column liebe"><img src="design/casamento/1000127201.jpg" alt="Liebe"></div>
     </div>
+        <div class="row">
+            <div class="column natur">
+                <img src="design/paisagem/file_000000000930620ab3f1551aa6c8b852_conversation_id=6800ea08-2b8c-8004-8296-be2161759334&message_id=31d0e266-6bcf-442b-b1d4-dfacab8e04ee.png" alt="Natur 1">
+            </div>
+
+            <div class="column schilder">
+                <img src="design/schilder/001.png" alt="Schilder 1">
+                <img src="design/schilder/002.png" alt="Schilder 2">
+                <img src="design/schilder/003.png" alt="Schilder 3">
+                <img src="design/schilder/004.png" alt="Schilder 4">
+                <img src="design/schilder/005.png" alt="Schilder 5">
+                <img src="design/schilder/006.png" alt="Schilder 6">
+                <img src="design/schilder/007.png" alt="Schilder 7">
+                <img src="design/schilder/008.png" alt="Schilder 8">
+                <img src="design/schilder/009.png" alt="Schilder 9">
+                <img src="design/schilder/010.png" alt="Schilder 10">
+                <img src="design/schilder/011.png" alt="Schilder 11">
+                <img src="design/schilder/012.png" alt="Schilder 12">
+                <img src="design/schilder/013.png" alt="Schilder 13">
+                <img src="design/schilder/014.png" alt="Schilder 14">
+                <img src="design/schilder/015.png" alt="Schilder 15">
+                <img src="design/schilder/016.png" alt="Schilder 16">
+                <img src="design/schilder/017.png" alt="Schilder 17">
+                <img src="design/schilder/018.png" alt="Schilder 18">
+                <img src="design/schilder/021.png" alt="Schilder 21">
+                <img src="design/schilder/file_000000001a9861f7aa3545bb5624e78e.png" alt="Schilder">
+                <img src="design/schilder/file_000000001f3861f785dfe0f22ad56f4f.png" alt="Schilder">
+                <img src="design/schilder/file_000000007db861f7bc2ca0afc338cc50 (1).png" alt="Schilder">
+                <img src="design/schilder/file_0000000091b061f7b2b1f614deb01508.png" alt="Schilder">
+                <img src="design/schilder/file_00000000b48061f7ba5713d5b2396e9b (1).png" alt="Schilder">
+                <img src="design/schilder/file_00000000eb5c61f795900ecba81c56e6.png" alt="Schilder">
+                <img src="design/schilder/file_00000000f91c61f7ad067a440fa97a05.png" alt="Schilder">
+                <img src="design/schilder/IMG_20250428_013354.png" alt="Schilder">
+                <img src="design/schilder/IMG_20250428_013419.png" alt="Schilder">
+                <img src="design/schilder/IMG_20250428_013449.png" alt="Schilder">
+                <img src="design/schilder/IMG_20250428_014039.png" alt="Schilder">
+                <img src="design/schilder/IMG_20250428_014054.png" alt="Schilder">
+            </div>
+            
+            <div class="column tiere">
+                <img src="design/tiere/1000127189.jpg" alt="Tiere 1">
+                <img src="design/tiere/1000127190.jpg" alt="Tiere 2">
+                <img src="design/tiere/1000127222.jpg" alt="Tiere 3">
+                <img src="design/tiere/BackgroundEraser_20250218_203403944.jpg" alt="Tiere 4">
+                <img src="design/tiere/BackgroundEraser_20250504_114407966.jpg" alt="Tiere 5">
+                <img src="design/tiere/BackgroundEraser_20250709_113933180.jpg" alt="Tiere 6">
+                <img src="design/tiere/BackgroundEraser_20250719_093108227.jpg" alt="Tiere 7">
+                <img src="design/tiere/BackgroundEraser_20250823_172921262.jpg" alt="Tiere 8">
+                <img src="design/tiere/BackgroundEraser_20260314_151401712.png" alt="Tiere 9">
+                <img src="design/tiere/file_0000000018ec624690a24c6d34cdb553.png" alt="Tiere 10">
+                <img src="design/tiere/file_0000000023c061f698bbcf745b56fcf3.png" alt="Tiere 11">
+                <img src="design/tiere/file_0000000047bc6246b2f40945a9c2d825 (1).png" alt="Tiere 12">
+                <img src="design/tiere/file_000000004b9c61f49c6201b467d7d0d3 (1).png" alt="Tiere 13">
+                <img src="design/tiere/file_000000007d4c720aaac7bc9858746069.png" alt="Tiere 14">
+                <img src="design/tiere/file_000000009f5c62439b52504e32f9c7e0.png" alt="Tiere 15">
+                <img src="design/tiere/file_00000000b9b0623087b41156c92076f5.png" alt="Tiere 16">
+                <img src="design/tiere/file_00000000f844620a947b6718eef733bd.png" alt="Tiere 17">
+                <img src="design/tiere/IMG_20240916_123947.jpg" alt="Tiere 18">
+                <img src="design/tiere/IMG_20241129_181456_397.jpg" alt="Tiere 19">
+                <img src="design/tiere/IMG_20241130_130629.jpg" alt="Tiere 20">
+                <img src="design/tiere/IMG_20241208_014023.jpg" alt="Tiere 21">
+                <img src="design/tiere/IMG_20250105_221542.jpg" alt="Tiere 22">
+                <img src="design/tiere/IMG_20250123_152531.jpg" alt="Tiere 23">
+                <img src="design/tiere/IMG_20250529_193627.png" alt="Tiere 24">
+            </div>
+
+            <div class="column liebe">
+                <img src="design/casamento/20260315_094408_000.png" alt="Liebe">
+                <img src="design/casamento/1000127201.jpg" alt="Liebe">
+                <img src="design/casamento/1000127210.jpg" alt="Liebe">
+                <img src="design/casamento/1000127211.jpg" alt="Liebe">
+                <img src="design/casamento/1000127213.jpg" alt="Liebe">
+                <img src="design/casamento/1000127216.jpg" alt="Liebe">
+                <img src="design/casamento/1000127219.jpg" alt="Liebe">
+                <img src="design/casamento/1000127225.jpg" alt="Liebe">
+                <img src="design/casamento/BackgroundEraser_20250526_192536202.png" alt="Liebe">
+                <img src="design/casamento/file_00000000a8ac71f493925c613adf9f2d.png" alt="Liebe">
+                <img src="design/casamento/file_00000000eeb461f98adb90f33799126d.png" alt="Liebe">
+                <img src="design/casamento/file_0000000072cc7246a25afbbbb138a4e7.png" alt="Liebe">
+            </div>
+
+            <div class="column frases">
+                <img src="design/frases/1000068928.jpg" alt="Frases">
+                <img src="design/frases/1000068942.jpg" alt="Frases">
+                <img src="design/frases/1000068944.jpg" alt="Frases">
+                <img src="design/frases/file_00000000ccf861f4b93ca8122fd1f84c.png" alt="Frases">
+                <img src="design/frases/file_00000000d4c8624386cde38fe38b656f.png" alt="Frases">
+            </div>
+
+            <div class="column Blumen">
+                <img src="design/flores/1000127186.jpg" alt="Blumen">
+                <img src="design/flores/1000127187.jpg" alt="Blumen">
+                <img src="design/flores/1000127198.jpg" alt="Blumen">
+                <img src="design/flores/1000127202.jpg" alt="Blumen">
+                <img src="design/flores/BackgroundEraser_20250611_195404140.png" alt="Blumen">
+            </div>
+
+            <div class="column fantasia">
+                <img src="design/fantasia/IMG_20250530_131137.png" alt="Fantasia">
+                <img src="design/fantasia/file_00000000b2cc61fdada29d82727e3f6d.png" alt="Fantasia">
+                <img src="design/fantasia/file_00000000dcec624386b8a903b7364fcc.png" alt="Fantasia">
+                <img src="design/fantasia/file_00000000dd846243b365b07442841cd.png" alt="Fantasia">
+            </div>
+
+            <div class="column lustig">
+                <img src="design/lustig/BackgroundEraser_20251024_070353268.png" alt="Lustig">
+                <img src="design/lustig/file_000000008c28620e8f37ce7f696a0e0b.png" alt="Lustig">
+                <img src="design/lustig/IMG_20251025_121917.png" alt="Lustig">
+            </div>
+
+            <div class="column sport">
+                <img src="design/sport/file_000000008b8061f7ba54515a4748a8cc.png" alt="Sport">
+                <img src="design/sport/IMG_20250405_203127.png" alt="Sport">
+                <img src="design/sport/IMG_20250412_140700.png" alt="Sport">
+                <img src="design/sport/IMG_20250519_151632.png" alt="Sport">
+                <img src="design/sport/IMG_20250519_152051.png" alt="Sport">
+                <img src="design/sport/IMG_20250519_152101.png" alt="Sport">
+                <img src="design/sport/IMG_20250519_152202.png" alt="Sport">
+                <img src="design/sport/IMG_20250519_152305.png" alt="Sport">
+                <img src="design/sport/IMG_20250519_152343.png" alt="Sport">
+                <img src="design/sport/IMG_20250519_152408.png" alt="Sport">
+                <img src="design/sport/IMG_20250519_152419.png" alt="Sport">
+                <img src="design/sport/IMG_20250519_152431.png" alt="Sport">
+                <img src="design/sport/IMG_20250519_152519.png" alt="Sport">
+            </div>
+
+            <div class="column Alimentos">
+                <img src="design/alimentos/1000127234.jpg" alt="Essen">
+                <img src="design/alimentos/1000127236.jpg" alt="Essen">
+                <img src="design/alimentos/BackgroundEraser_20250424_194717593.jpg" alt="Essen">
+                <img src="design/alimentos/BackgroundEraser_20251101_115807969.jpg" alt="Essen">
+                <img src="design/alimentos/BackgroundEraser_20251122_125640032.jpg" alt="Essen">
+                <img src="design/alimentos/file_000000002a5c624695f6d0c6da097d51.PNG" alt="Essen">
+                <img src="design/alimentos/IMG_20241125_205930.jpg" alt="Essen">
+                <img src="design/alimentos/IMG_20250620_184918.jpg" alt="Essen">
+                <img src="design/alimentos/IMG_20251122_122832.jpg" alt="Essen">
+                <img src="design/alimentos/IMG_20251122_140751.jpg" alt="Essen">
+            </div>
 
     <footer>
         <p>Valéria Artesanal © 2025 | Tudo feito com carinho à mão</p>
